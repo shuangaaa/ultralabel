@@ -1,0 +1,9 @@
+fastapi>=0.115
+httpx>=0.27
+pydantic>=2.8
+uvicorn[standard]>=0.30
+python-multipart>=0.0.12
+nibabel>=5.2
+imageio>=2.34
+imageio-ffmpeg>=0.5
+pycocotools>=2.0.8

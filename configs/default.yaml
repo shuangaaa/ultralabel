@@ -1,0 +1,42 @@
+device: cuda:0
+query_frame: 0
+image_size: [460, 460]
+encoder:
+  name: dino_vitb8
+  patch_size: 8
+  frozen: true
+  checkpoint: null
+upsampling:
+  name: upsample_anything
+  iterations: 50
+  checkpoint: null
+tracking:
+  local_search_radius: 128
+  soft_argmax_radius: 35
+  beta: 1.0
+  refiner_checkpoint: null
+sampling:
+  radius_fraction: 0.1
+  include_boundary: true
+  include_interior: true
+reconstruction:
+  kde_bandwidth: 20.0
+  kde_threshold: 0.005
+  cpd_transform: similarity
+  cpd_max_iterations: 8
+  cpd_tolerance: 0.0001
+student:
+  name: cotracker3
+  steps: 50000
+  batch_size: 4
+  optimizer: AdamW
+  learning_rate: 0.00005
+  scheduler: cosine
+  loss: huber
+  huber_delta: 1.0
+quality_control:
+  n_estimators: 400
+  max_depth: 4
+  min_samples_leaf: 10
+  class_weight: balanced_subsample
+  random_state: 42

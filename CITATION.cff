@@ -1,0 +1,7 @@
+cff-version: 1.2.0
+message: "Please cite the UltraLabel manuscript when using this work."
+title: UltraLabel
+type: software
+version: 0.1.0
+authors:
+  - name: UltraLabel authors
